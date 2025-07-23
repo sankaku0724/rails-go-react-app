@@ -1,0 +1,22 @@
+{
+  "name": "my-monorepo-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=ts-react-client",
+    "api": "cd ./packages/rails-api-server && rails s",
+    "processor": "cd ./packages/go-processor && go run main.go",
+    "start:all": "npm-run-all --parallel dev api processor"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
